@@ -1,4 +1,3 @@
-a,b=1,2
-print(a,b)
-a
-print(a,b)
+a=input()
+a=float(a)
+print('%.2f' %a)
