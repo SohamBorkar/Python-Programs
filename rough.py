@@ -1,3 +1,6 @@
-a=input()
-a=float(a)
-print('%.2f' %a)
+# a=input()
+# a=float(a)
+# print('%.2f' %a)
+
+
+
