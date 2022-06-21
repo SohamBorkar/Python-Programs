@@ -1,20 +1,27 @@
-# student_name = 'Rahul'
+student_name = 'Rahul'
 
-# marks = {'Pawan': 90, 'Rahul': 55, 'Roshan': 77}
+marks = {'Pawan': 90, 'Rahul': 55, 'Roshan': 77}
 
-# for student in marks:
-#     if student == student_name:
-#         print(marks[student])
-# else:
-#     print('No entry with that name found.')
+for student in marks:
+    if student == student_name:
+        print(marks[student])
+else:
+    print('No entry with that name found.')
 
 dict = {'Vegetables' : ['Cabbage', 'Tomato', 'Onion'], 'Fruits' : ['Apple', 'Mango', 'Banana'], 'Flowers' : ['Rose', 'Lotus', 'Lily']}
 
 # print(dict)
+# print(dict['Vegetables'] [0])
+# print(dict['Fruits'] [1])
 
 for i,j in dict.items():
-    print(j[0],",",end=" ")
-    print(j[2])
+    print(i,end=" : ")
+    print(j[0],j[1],j[2])
+    
+
+# for i,j in dict.items():
+#     print(j[0],",",end=" ")
+#     print(j[2])
 
 # for i in range (0,3):
 #     print(dict['Vegetables'][i])

@@ -1,3 +1,3 @@
-rsed(s)
-# d="".join(c)
-# print(d)
+
+    # print(j[1])
+    # print(j[2])
