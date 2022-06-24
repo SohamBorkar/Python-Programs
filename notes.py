@@ -12,3 +12,13 @@
 # tuple = ("apple","cherry")
 # string = "Soham"
 # frozenset = frozenset(string)
+
+# a=5
+# b=a
+# print(id(a))
+# print(id(b))
+# print()
+# a=6
+# print(id(a))
+# print(id(b))
+# print(a,b)
