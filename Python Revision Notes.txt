@@ -1,0 +1,818 @@
+Python is widly used general purpose, high level programming language. It was initially designed by Guido Van Rossum	 in 1991and developed by pyton software foundation.
+
+For various purposes such as developing, scripting, generation, and software testing, this language is utilized. Due to its elegance and simplicity, top technology organizations like Dropbox, Google, Quora, Mozilla, Hewlett-Packard, Qualcomm, IBM, and Cisco have implemented Python. 
+
+A Python script is a collection of commands in a file designed to be executed like a program. The file can of course contain functions and import various modules, but the idea is that it will be run or executed from the command line or from within a Python interactive shell to perform a specific task. Often a script first contains a set of function definitions and then has the main program that might call the functions.
+
+Python is not “statically typed”. We do not need to declare variables before using them or declare their type. A variable is created the moment we first assign a value to it. A variable is a name given to a memory location. It is the basic unit of storage in a program. 	
+The value stored in a variable can be changed during program execution.
+A variable is only a name given to a memory location, all the operations done on the variable effects that memory location.
+
+Literal is a raw data given in a variable or constant. In Python, there are various types of literals they are as follows:
+	Numeric Literals are immutable (unchangeable). Numeric literals can belong to 3 different numerical types: Integer, Float, and Complex.
+	A string literal is a sequence of characters surrounded by quotes. We can use both single, double, or triple quotes for a string. And, a character literal is a single character surrounded by single or double quotes.
+	A Boolean literal can have any of the two values: True or False.
+	Python contains one special literal i.e. None. We use it to specify that the field has not been created.
+	There are four different literal collections List literals, Tuple literals, Dict literals, and Set literals.
+
+Taking multiple inputs : a, b, c = map(int, input("Enter the Numbers : ").split())
+
+Formating the text : 
+# Initializing variables
+a = 20
+b = 10
+
+# addition
+sum = a + b
+
+# subtraction
+sub = a- b
+
+# Output
+print('The value of a is {} and b is {}'.format(a,b))
+
+print('{2} is the sum of {0} and {1}'.format(a,b,sum))
+
+print('{sub_value} is the subtraction of {value_a} and {value_b}'.format(value_a = a ,
+																		value_b = b,
+																		sub_value = sub))
+
+
+Variables can store data of different types, and different types can do different things.
+
+Python has the following data types built-in by default, in these categories:
+
+Text Type:	str
+Numeric Types:	int, float, complex
+Sequence Types:	list, tuple, range
+Mapping Type:	dict
+Set Types:		set, frozenset
+Boolean Type:	bool
+Binary Types:	bytes, bytearray, memoryview
+None Type:	NoneType
+
+
+num = 61
+print (num)
+print (bin (num))
+print (0b111101)
+print (int("0b111101 ", 2))
+
+					Lists:
+List don't repeate elements/ data in them when we use list.insert() method.
+We can access a range of items in a list by using the slicing operator :
+# List slicing in Python
+
+my_list = ['p','r','o','g','r','a','m','i','z']
+
+# elements from index 2 to index 4
+print(my_list[2:5])   		#SLICING HERE.
+
+# elements from index 5 to end
+print(my_list[5:])
+
+# elements beginning to end
+print(my_list[:])
+
+
+
+To add element in list: list.append(4), list.extend([1,2,3])
+To delete element in list: del list[element_index]
+To delete whole list : del list_name.
+To delete element : list.remove("element"), list.pop(element_index)
+To clear whole list: list.clear()
+
+
+
+# Concatenating and repeating lists
+odd = [1, 3, 5]
+
+print(odd + [9, 7, 5])
+
+print(["re"] * 3)
+
+
+
+
+Methods	Descriptions
+append()	adds an element to the end of the list
+extend()	adds all elements of a list to another list
+insert()	inserts an item at the defined index
+remove()	removes an item from the list
+pop()	returns and removes an element at the given index
+clear()	removes all items from the list
+index()	returns the index of the first matched item
+count()	returns the count of the number of items passed as an argument
+sort()	sort items in a list in ascending order
+reverse()	reverse the order of items in the list
+copy() 	returns a shallow copy of the list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						Files
+https://www.programiz.com/python-programming/file-operation
+
+Python has a built-in open() function to open a file. This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
+
+>>> f = open("test.txt")    # open file in current directory
+>>> f = open("C:/Python38/README.txt")  # specifying full path
+We can specify the mode while opening a file. In mode, we specify whether we want to read r, write w or append a to the file. We can also specify if we want to open the file in text mode or binary mode.
+
+The default is reading in text mode. In this mode, we get strings when reading from the file.
+
+On the other hand, binary mode returns bytes and this is the mode to be used when dealing with non-text files like images or executable files.
+
+Mode	Description
+r	Opens a file for reading. (default)
+w	Opens a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
+x	Opens a file for exclusive creation. If the file already exists, the operation fails.
+a	Opens a file for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+t	Opens in text mode. (default)
+b	Opens in binary mode.
++	Opens a file for updating (reading and writing)
+
+
+		Closing the file
+When we are done with performing operations on the file, we need to properly close the file.
+
+Closing a file will free up the resources that were tied with the file. It is done using the close() method available in Python.
+
+Python has a garbage collector to clean up unreferenced objects but we must not rely on it to close the file.
+
+This method is not entirely safe. If an exception occurs when we are performing some operation with the file, the code exits without closing the file.
+
+A safer way is to use a try...finally block.
+
+
+>>> f.tell()    # get the current file position
+56
+
+>>> f.seek(0)   # bring file cursor to initial position
+0
+
+>>> print(f.read())  # read the entire file
+This is my first file
+This file
+contains three lines
+
+			Exceptions: Built in exceptions and user defined exception.
+Illegal oprations can raise exception. 
+FileNotFoundError, ZeroDivisionError, ImportError, FloatingPointError (when opration fails), IndexError (sequence out of range), KeyError, MemoryError, NameError
+
+Python has many built-in exceptions that are raised when your program encounters an error (something in the program goes wrong).
+When these exceptions occur, the Python interpreter stops the current process and passes it to the calling process until it is handled. If not handled, the program will crash.
+
+A try clause can have any number of except clauses to handle different exceptions, however, only one will be executed in case an exception occurs.
+We can use a tuple of values to specify multiple exceptions in an except clause. 
+
+The try statement in Python can have an optional finally clause. This clause is executed no matter what, and is generally used to release external resources.
+
+For example, we may be connected to a remote data center through the network or working with a file or a Graphical User Interface (GUI).
+
+In all these circumstances, we must clean up the resource before the program comes to a halt whether it successfully ran or not. These actions (closing a file, GUI or disconnecting from network) are performed in the finally clause to guarantee the execution.
+
+try:
+   f = open("test.txt",encoding = 'utf-8')
+   # perform file operations
+finally:
+   f.close()
+
+Creating Custom Exceptions
+In Python, users can define custom exceptions by creating a new class. This exception class has to be derived, either directly or indirectly, from the built-in Exception class. Most of the built-in exceptions are also derived from this class.
+
+>>> class CustomError(Exception):
+...     pass
+>>> raise CustomError("An error occurred")
+Traceback (most recent call last):
+...
+__main__.CustomError: An error occurred
+
+When we are developing a large Python program, it is a good practice to place all the user-defined exceptions that our program raises in a separate file. Many standard modules do this. They define their exceptions separately as exceptions.py or errors.py (generally but not always).
+
+
+
+				Length Arguments:
+1.) *args
+
+The special syntax *args in function definitions in python is used to pass a variable number of arguments to a function. It is used to pass a non-key worded, variable-length argument list. 
+The syntax is to use the symbol * to take in a variable number of arguments; by convention, it is often used with the word args.
+What *args allows you to do is take in more arguments than the number of formal arguments that you previously defined. With *args, any number of extra arguments can be tacked on to your current formal parameters (including zero extra arguments).
+For example : we want to make a multiply function that takes any number of arguments and able to multiply them all together. It can be done using *args.
+Using the *, the variable that we associate with the * becomes an iterable meaning you can do things like iterate over it, run some higher-order functions such as map and filter, etc.
+
+2.)**kwargs
+
+The special syntax **kwargs in function definitions in python is used to pass a keyworded, variable-length argument list. We use the name kwargs with the double star. The reason is because the double star allows us to pass through keyword arguments (and any number of them).
+
+A keyword argument is where you provide a name to the variable as you pass it into the function.
+One can think of the kwargs as being a dictionary that maps each keyword to the value that we pass alongside it. That is why when we iterate over the kwargs there doesn’t seem to be any order in which they were printed out.
+
+
+					Packages :
+We usually organize our files in different folders and subfolders based on some criteria, so that they can be managed easily and efficiently. For example, we keep all our games in a Games folder and we can even subcategorize according to the genre of the game or something like this. The same analogy is followed by the Python package. 
+
+A Python module may contain several classes, functions, variables, etc. whereas a Python package can contains several module. In simpler terms a package is folder that contains various modules as files.
+					
+					Modules:
+modules in python package is nothing but python files. 
+
+Importing Modules:
+We can import the functions, classes defined in a module to another module using the import statement in some other Python source file. 
+
+When the interpreter encounters an import statement, it imports the module if the module is present in the search path. A search path is a list of directories that the interpreter searches for importing a module. For example, to import the module calc.py, we need to put the following command at the top of the script.
+
+Note: This does not import the functions or classes directly instead imports the module only. To access the functions inside the module the dot(.) operator is used.
+
+import calc
+  
+print(calc.add(10, 2))
+
+From statement while importing: Python’s from statement lets you import specific attributes from a module without importing the module as a whole.
+from math import sqrt, factorial
+
+The * symbol used with the from import statement is used to import all the names from a module to a current namespace.
+from math import *
+			Locating Modules
+Whenever a module is imported in Python the interpreter looks for several locations. First, it will check for the built-in module, if not found then it looks for a list of directories defined in the sys.path. Python interpreter searches for the module in the following manner –
+
+First, it searches for the module in the current directory.
+If the module isn’t found in the current directory, Python then searches each directory in the shell variable PYTHONPATH. The PYTHONPATH is an environment variable, consisting of a list of directories.
+If that also fails python checks the installation-dependent list of directories configured at the time Python is installed.
+
+We can rename the module while importing it using the as keyword: import math as gfg
+
+ The built-in namespace encompasses the global namespace and the global namespace encompasses the local namespace.
+ 
+A lifetime of a namespace depends upon the scope of objects, if the scope of an object ends, the lifetime of that namespace comes to an end. Hence, it is not possible to access the inner namespace’s objects from an outer namespace.
+
+
+					function in Python
+In Python, a function is a group of related statements that performs a specific task.
+
+Functions help break our program into smaller and modular chunks. As our program grows larger and larger, functions make it more organized and manageable.
+
+Furthermore, it avoids repetition and makes the code reusable.
+
+Syntax of Function
+def function_name(parameters):
+	"""docstring"""
+	statement(s)
+Above shown is a function definition that consists of the following components.
+
+Keyword def that marks the start of the function header.
+A function name to uniquely identify the function. Function naming follows the same rules of writing identifiers in Python.
+Parameters (arguments) through which we pass values to a function. They are optional.
+A colon (:) to mark the end of the function header.
+Optional documentation string (docstring) to describe what the function does.
+One or more valid python statements that make up the function body. Statements must have the same indentation level (usually 4 spaces).
+An optional return statement to return a value from the function.
+			Calling function
+Once we have defined a function, we can call it from another function, program, or even the Python prompt. To call a function we simply type the function name with appropriate parameters.
+Note: In python, the function definition should always be present before the function call. Otherwise, we will get an error.
+
+			Docstrings
+The first string after the function header is called the docstring and is short for documentation string. It is briefly used to explain what a function does.
+
+Although optional, documentation is a good programming practice. Unless you can remember what you had for dinner last week, always document your code.
+
+In the above example, we have a docstring immediately below the function header. We generally use triple quotes so that docstring can extend up to multiple lines. This string is available to us as the __doc__ attribute of the function.
+
+	
+The return statement is used to exit a function and go back to the place from where it was called.
+
+This statement can contain an expression that gets evaluated and the value is returned. If there is no expression in the statement or the return statement itself is not present inside a function, then the function will return the None object.
+
+						
+
+				
+						List:
+Python lists are one of the most versatile data types that allow us to work with multiple elements at once. 
+append()	adds an element to the end of the list
+extend()	adds all elements of a list to another list
+insert()	inserts an item at the defined index
+remove()	removes an item from the list
+pop()	returns and removes an element at the given index
+clear()	removes all items from the list
+index()	returns the index of the first matched item
+count()	returns the count of the number of items passed as an argument
+sort()	sort items in a list in ascending order
+reverse()	reverse the order of items in the list
+copy() 	returns a shallow copy of the list
+
+# Output: False
+print('a' in my_list)
+
+# Output: True
+print('c' not in my_list)
+
+for fruit in ['apple','banana','mango']:
+    print("I like",fruit)
+
+pow2 = [2 ** x for x in range(10)]
+print(pow2)
+
+
+
+		
+						Tuple:
+		A tuple is created by placing all the items (elements) inside parentheses (), separated by commas. The parentheses are optional, however, it is a good practice to use them.
+A tuple can also be created without using parentheses. This is known as tuple packing.
+Having one element within parentheses is not enough. We will need a trailing comma to indicate that it is, in fact, a tuple.
+
+		Slicing: print(my_tuple[:-7]) 	This will print negative index starting from -7 uptill start index i.e. 0
+We can combile multiple tuples by using + oprator.
+
+Unlike lists, tuples are immutable.
+
+This means that elements of a tuple cannot be changed once they have been assigned. But, if the element is itself a mutable data type like a list, its nested items can be changed.
+
+		Deleting a Tuple
+As discussed above, we cannot change the elements in a tuple. It means that we cannot delete or remove items from a tuple.
+
+Deleting a tuple entirely, however, is possible using the keyword del. :  	del tuple_name.
+
+
+print(my_tuple.count('p'))  
+print(my_tuple.index('m')) 
+
+print('g' not in my_tuple)
+print('b' in my_tuple)
+
+
+		Iterating Through a Tuple
+We can use a for loop to iterate through each item in a tuple.
+for name in ('John', 'Kate'):
+    print("Hello", name)
+
+
+				Advantages of Tuple over List
+Since tuples are quite similar to lists, both of them are used in similar situations. However, there are certain advantages of implementing a tuple over a list. Below listed are some of the main advantages:
+
+We generally use tuples for heterogeneous (different) data types and lists for homogeneous (similar) data types.
+Since tuples are immutable, iterating through a tuple is faster than with list. So there is a slight performance boost.
+Tuples that contain immutable elements can be used as a key for a dictionary. With lists, this is not possible.
+If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
+
+
+
+
+
+						Strings:
+What is String in Python?
+A string is a sequence of characters.
+
+A character is simply a symbol. For example, the English language has 26 characters.
+
+Computers do not deal with characters, they deal with numbers (binary). Even though you may see characters on your screen, internally it is stored and manipulated as a combination of 0s and 1s.
+
+This conversion of character to a number is called encoding, and the reverse process is decoding. ASCII and Unicode are some of the popular encodings used.
+
+In Python, a string is a sequence of Unicode characters. Unicode was introduced to include every character in all languages and bring uniformity in encoding. You can learn about Unicode from Python Unicode.
+
+		How to create a string in Python?
+Strings can be created by enclosing characters inside a single quote or double-quotes. Even triple quotes can be used in Python but generally used to represent multiline strings and docstrings.
+
+		How to access characters in a string?
+We can access individual characters using indexing and a range of characters using slicing. Index starts from 0. Trying to access a character out of index range will raise an IndexError. The index must be an integer. We can't use floats or other types, this will result into TypeError.
+
+Python allows negative indexing for its sequences.
+
+The index of -1 refers to the last item, -2 to the second last item and so on. We can access a range of items in a string by using the slicing operator :(colon).
+
+# Iterating through a string
+count = 0
+for letter in 'Hello World':
+    if(letter == 'l'):
+        count += 1
+print(count,'letters found')
+
+		String membership test:
+>>> 'a' in 'program'
+True
+>>> 'at' not in 'battle'
+False
+
+str = 'cold'
+
+# enumerate()
+list_enumerate = list(enumerate(str))
+print('list(enumerate(str) = ', list_enumerate)
+
+
+
+Python Strings
+In this tutorial you will learn to create, format, modify and delete strings in Python. Also, you will be introduced to various string operations and functions.
+
+Video: Python Strings
+
+What is String in Python?
+A string is a sequence of characters.
+
+A character is simply a symbol. For example, the English language has 26 characters.
+
+Computers do not deal with characters, they deal with numbers (binary). Even though you may see characters on your screen, internally it is stored and manipulated as a combination of 0s and 1s.
+
+This conversion of character to a number is called encoding, and the reverse process is decoding. ASCII and Unicode are some of the popular encodings used.
+
+In Python, a string is a sequence of Unicode characters. Unicode was introduced to include every character in all languages and bring uniformity in encoding. You can learn about Unicode from Python Unicode.
+
+How to create a string in Python?
+Strings can be created by enclosing characters inside a single quote or double-quotes. Even triple quotes can be used in Python but generally used to represent multiline strings and docstrings.
+
+# defining strings in Python
+# all of the following are equivalent
+my_string = 'Hello'
+print(my_string)
+
+my_string = "Hello"
+print(my_string)
+
+my_string = '''Hello'''
+print(my_string)
+
+# triple quotes string can extend multiple lines
+my_string = """Hello, welcome to
+           the world of Python"""
+print(my_string)
+Run Code
+When you run the program, the output will be:
+
+Hello
+Hello
+Hello
+Hello, welcome to
+           the world of Python
+How to access characters in a string?
+We can access individual characters using indexing and a range of characters using slicing. Index starts from 0. Trying to access a character out of index range will raise an IndexError. The index must be an integer. We can't use floats or other types, this will result into TypeError.
+
+Python allows negative indexing for its sequences.
+
+The index of -1 refers to the last item, -2 to the second last item and so on. We can access a range of items in a string by using the slicing operator :(colon).
+
+#Accessing string characters in Python
+str = 'programiz'
+print('str = ', str)
+
+#first character
+print('str[0] = ', str[0])
+
+#last character
+print('str[-1] = ', str[-1])
+
+#slicing 2nd to 5th character
+print('str[1:5] = ', str[1:5])
+
+#slicing 6th to 2nd last character
+print('str[5:-2] = ', str[5:-2])
+Run Code
+When we run the above program, we get the following output:
+
+str =  programiz
+str[0] =  p
+str[-1] =  z
+str[1:5] =  rogr
+str[5:-2] =  am
+If we try to access an index out of the range or use numbers other than an integer, we will get errors.
+
+# index must be in range
+>>> my_string[15]  
+...
+IndexError: string index out of range
+
+# index must be an integer
+>>> my_string[1.5] 
+...
+TypeError: string indices must be integers
+Slicing can be best visualized by considering the index to be between the elements as shown below.
+
+If we want to access a range, we need the index that will slice the portion from the string.
+
+Element Slicing in Python
+String Slicing in Python
+How to change or delete a string?
+Strings are immutable. This means that elements of a string cannot be changed once they have been assigned. We can simply reassign different strings to the same name.
+
+>>> my_string = 'programiz'
+>>> my_string[5] = 'a'
+...
+TypeError: 'str' object does not support item assignment
+>>> my_string = 'Python'
+>>> my_string
+'Python'
+We cannot delete or remove characters from a string. But deleting the string entirely is possible using the del keyword.
+
+>>> del my_string[1]
+...
+TypeError: 'str' object doesn't support item deletion
+>>> del my_string
+>>> my_string
+...
+NameError: name 'my_string' is not defined
+Python String Operations
+There are many operations that can be performed with strings which makes it one of the most used data types in Python.
+
+To learn more about the data types available in Python visit: Python Data Types
+
+Concatenation of Two or More Strings
+Joining of two or more strings into a single one is called concatenation.
+
+The + operator does this in Python. Simply writing two string literals together also concatenates them.
+
+The * operator can be used to repeat the string for a given number of times.
+
+# Python String Operations
+str1 = 'Hello'
+str2 ='World!'
+
+# using +
+print('str1 + str2 = ', str1 + str2)
+
+# using *
+print('str1 * 3 =', str1 * 3)
+Run Code
+When we run the above program, we get the following output:
+
+str1 + str2 =  HelloWorld!
+str1 * 3 = HelloHelloHello
+Writing two string literals together also concatenates them like + operator.
+
+If we want to concatenate strings in different lines, we can use parentheses.
+
+>>> # two string literals together
+>>> 'Hello ''World!'
+'Hello World!'
+
+>>> # using parentheses
+>>> s = ('Hello '
+...      'World')
+>>> s
+'Hello World'
+Iterating Through a string
+We can iterate through a string using a for loop. Here is an example to count the number of 'l's in a string.
+
+# Iterating through a string
+count = 0
+for letter in 'Hello World':
+    if(letter == 'l'):
+        count += 1
+print(count,'letters found')
+Run Code
+When we run the above program, we get the following output:
+
+3 letters found
+String Membership Test
+We can test if a substring exists within a string or not, using the keyword in.
+
+>>> 'a' in 'program'
+True
+>>> 'at' not in 'battle'
+False
+
+
+		Built-in functions to Work with Python
+Various built-in functions that work with sequence work with strings as well.
+
+Some of the commonly used ones are enumerate() and len(). The enumerate() function returns an enumerate object. It contains the index and value of all the items in the string as pairs. This can be useful for iteration.
+
+Similarly, len() returns the length (number of characters) of the string.
+#character count
+print('len(str) = ', len(str))
+
+
+		The format() Method for Formatting Strings
+The format() method that is available with the string object is very versatile and powerful in formatting strings. Format strings contain curly braces {} as placeholders or replacement fields which get replaced.
+
+We can use positional arguments or keyword arguments to specify the order.
+
+# Python string format() method
+
+# default(implicit) order
+default_order = "{}, {} and {}".format('John','Bill','Sean')
+print('\n--- Default Order ---')
+print(default_order)
+
+# order using positional argument
+positional_order = "{1}, {0} and {2}".format('John','Bill','Sean')
+print('\n--- Positional Order ---')
+print(positional_order)
+
+# order using keyword argument
+keyword_order = "{s}, {b} and {j}".format(j='John',b='Bill',s='Sean')
+print('\n--- Keyword Order ---')
+print(keyword_order)
+
+lower(), upper(), join(), split(), find(), replace() 
+
+
+
+
+
+
+					Sets:
+A set is an unordered collection of items. Every set element is unique (no duplicates) and must be immutable (cannot be changed).
+
+However, a set itself is mutable. We can add or remove items from it.
+
+Sets can also be used to perform mathematical set operations like union, intersection, symmetric difference, etc.
+
+		Creating Python Sets
+A set is created by placing all the items (elements) inside curly braces {}, separated by comma, or by using the built-in set() function.
+
+It can have any number of items and they may be of different types (integer, float, tuple, string etc.). But a set cannot have mutable elements like lists, sets or dictionaries as its elements.
+
+		Modifying a set in Python
+Sets are mutable. However, since they are unordered, indexing has no meaning.
+
+We cannot access or change an element of a set using indexing or slicing. Set data type does not support it.
+
+We can add a single element using the add() method, and multiple elements using the update() method. The update() method can take tuples, lists, strings or other sets as its argument. In all cases, duplicates are avoided.
+
+# add an element
+# Output: {1, 2, 3}
+my_set.add(2)
+print(my_set)
+
+# add multiple elements
+# Output: {1, 2, 3, 4}
+my_set.update([2, 3, 4])
+print(my_set)
+
+# add list and set
+# Output: {1, 2, 3, 4, 5, 6, 8}
+my_set.update([4, 5], {1, 6, 8})
+print(my_set)
+
+		Removing elements from a set
+A particular item can be removed from a set using the methods discard() and remove().
+
+The only difference between the two is that the discard() function leaves a set unchanged if the element is not present in the set. On the other hand, the remove() function will raise an error in such a condition (if element is not present in the set).
+
+Similarly, we can remove and return an item using the pop() method.
+
+Since set is an unordered data type, there is no way of determining which item will be popped. It is completely arbitrary.
+
+We can also remove all the items from a set using the clear() method.
+
+
+
+
+						Dictionary
+Creating Python Dictionary
+Creating a dictionary is as simple as placing items inside curly braces {} separated by commas.
+
+An item has a key and a corresponding value that is expressed as a pair (key: value).
+
+While the values can be of any data type and can repeat, keys must be of immutable type (string, number or tuple with immutable elements) and must be unique
+
+		Accessing Elements from Dictionary
+While indexing is used with other data types to access values, a dictionary uses keys. Keys can be used either inside square brackets [] or with the get() method.
+
+If we use the square brackets [], KeyError is raised in case a key is not found in the dictionary. On the other hand, the get() method returns None if the key is not found.
+
+# Output: Jack
+print(my_dict['name'])
+
+# Output: 26
+print(my_dict.get('age'))
+
+		Changing and Adding Dictionary elements
+Dictionaries are mutable. We can add new items or change the value of existing items using an assignment operator.
+
+If the key is already present, then the existing value gets updated. In case the key is not present, a new (key: value) pair is added to the dictionary.
+
+# update value
+my_dict['age'] = 27
+
+		Removing elements from Dictionary
+We can remove a particular item in a dictionary by using the pop() method. This method removes an item with the provided key and returns the value.
+
+The popitem() method can be used to remove and return an arbitrary (key, value) item pair from the dictionary. All the items can be removed at once, using the clear() method.
+
+We can also use the del keyword to remove individual items or the entire dictionary itself.
+
+# remove a particular item, returns its value
+# Output: 16
+print(squares.pop(4))
+
+# remove all items
+squares.clear()
+
+Method	Description
+clear()	Removes all items from the dictionary.
+copy()	Returns a shallow copy of the dictionary.
+fromkeys(seq[, v])	Returns a new dictionary with keys from seq and value equal to v (defaults to None).
+get(key[,d])	Returns the value of the key. If the key does not exist, returns d (defaults to None).
+items()	Return a new object of the dictionary's items in (key, value) format.
+keys()	Returns a new object of the dictionary's keys.
+pop(key[,d])	Removes the item with the key and returns its value or d if key is not found. If d is not provided and the key is not found, it raises KeyError.
+popitem()	Removes and returns an arbitrary item (key, value). Raises KeyError if the dictionary is empty.
+setdefault(key[,d])	Returns the corresponding value if the key is in the dictionary. If not, inserts the key with a value of d and returns d (defaults to None).
+update([other])	Updates the dictionary with the key/value pairs from other, overwriting existing keys.
+values()	Returns a new object of the dictionary's values
+
+
+
+
+						OOP:
+Python is a multi-paradigm programming language. It supports different programming approaches.
+
+One of the popular approaches to solve a programming problem is by creating objects. This is known as Object-Oriented Programming (OOP).
+
+An object has two characteristics:
+
+attributes
+behavior
+Let's take an example:
+
+A parrot is an object, as it has the following properties:
+
+name, age, color as attributes
+singing, dancing as behavior
+
+The concept of OOP in Python focuses on creating reusable code. This concept is also known as DRY (Don't Repeat Yourself).
+
+		Class
+A class is a blueprint for the object. Here, we use the class keyword to define an empty class Parrot. From class, we construct instances. An instance is a specific object created from a particular class.
+
+		Object
+An object (instance) is an instantiation of a class. When class is defined, only the description for the object is defined. Therefore, no memory or storage is allocated.
+	
+class Parrot:
+
+    # class attribute
+    species = "bird"
+
+    # instance attribute
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+# instantiate the Parrot class
+blu = Parrot("Blu", 10)
+woo = Parrot("Woo", 15)
+
+# access the class attributes. 	The attributes are a characteristic of an object.
+print("Blu is a {}".format(blu.__class__.species))
+print("Woo is also a {}".format(woo.__class__.species))
+
+# access the instance attributes
+print("{} is {} years old".format( blu.name, blu.age))
+print("{} is {} years old".format( woo.name, woo.age))
+
+ attributes are defined inside the __init__ method of the class. It is the initializer method that is first run as soon as the object is created.
+
+We can access the class attribute using __class__.species. Class attributes are the same for all instances of a class. Similarly, we access the instance attributes using blu.name and blu.age. However, instance attributes are different for every instance of a class.
+
+		Methods
+Methods are functions defined inside the body of a class. They are used to define the behaviors of an object.
+
+
+
+
+
+						Inheritance
+Inheritance is a way of creating a new class for using details of an existing class without modifying it. The newly formed class is a derived class (or child class). Similarly, the existing class is a base class (or parent class).
+
+# parent class
+class Bird:
+    
+    def __init__(self):
+        print("Bird is ready")
+
+    def whoisThis(self):
+        print("Bird")
+
+    def swim(self):
+        print("Swim faster")
+
+# child class
+class Penguin(Bird):
+
+    def __init__(self):
+        # call super() function
+        super().__init__()
+        print("Penguin is ready")
+
+    def whoisThis(self):
+        print("Penguin")
+
+    def run(self):
+        print("Run faster")
+
+peggy = Penguin()
+peggy.whoisThis()
+peggy.swim()
+peggy.run()
